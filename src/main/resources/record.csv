@@ -1,0 +1,5 @@
+Type,Key,Summary,Assignee,Component,Description
+Bug,1234,Abc,a,,Bug raised
+Story,2134,Def,b,New,Story closed
+Task,1245,Ghi,c,Migration,Task assigned
+Defect,8761,Jkl,d,,Defect raised
