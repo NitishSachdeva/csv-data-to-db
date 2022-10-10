@@ -1,4 +1,4 @@
-Type,Key,Summary,Assignee,Component,Description
+EmpId,Name Prefix,First name,Last name,Component,Description
 Bug,1234,Abc,a,,Bug raised
 Story,2134,Def,b,New,Story closed
 Task,1245,Ghi,c,Migration,Task assigned
