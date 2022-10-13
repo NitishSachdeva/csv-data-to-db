@@ -47,7 +47,7 @@ public class BatchConfig {
         DefaultLineMapper<User> lineMapper = new DefaultLineMapper<>();
 
         DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
-        lineTokenizer.setNames(new String[]{"EmpId", "Name Prefix", "First name", "Last name"});
+        lineTokenizer.setNames(new String[]{"Emp ID", "Name Prefix", "First Name", "Last Name"});
         lineTokenizer.setIncludedFields(new int[]{0, 1, 2, 4}); //which cols to include
 
         BeanWrapperFieldSetMapper<User> fieldSetMapper = new BeanWrapperFieldSetMapper<>();
@@ -66,11 +66,12 @@ public class BatchConfig {
 
     }
 
+    @Bean
     public JdbcBatchItemWriter<User> writer(){
         JdbcBatchItemWriter<User> writer = new JdbcBatchItemWriter<>();
         writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<User>());
-        writer.setSql("insert into user(userId,namePrefix,firstName,lastName) values(:userId,:namePrefix,:firstName,:lastName)");
-        writer.setDataSource(dataSource);
+        writer.setSql("insert into user(userId,namePrefix,firstName,lastName) values (:userId,:namePrefix,:firstName,:lastName)");
+        writer.setDataSource(this.dataSource);
         return writer;
     }
 
